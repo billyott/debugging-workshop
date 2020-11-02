@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('joke-form')
   const jokeList = document.getElementById('joke-list')
-  const newJokeLi = document.createElement('li')
   let joke;
 
   function fetchJoke(){
@@ -22,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(username === "") return;
     fetchJoke()
     .then(function(jokeData) {
+      const newJokeLi = document.createElement('li')
       newJokeLi.innerHTML = `
       <span class="username">${username} says:</span> ${jokeData.joke}
       `
